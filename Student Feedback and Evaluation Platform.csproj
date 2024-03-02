@@ -106,6 +106,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\Course.aspx" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\Faculty.aspx" />
+    <Content Include="Admin\Feedback.aspx" />
+    <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\Main.aspx" />
+    <Content Include="Admin\nav.aspx" />
+    <Content Include="Admin\Students.aspx" />
+    <Content Include="App_Data\fs1.mdf" />
+    <Content Include="App_Data\fs1_log.ldf">
+      <DependentUpon>fs1.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -160,6 +172,62 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Course.aspx.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Course.aspx.designer.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Faculty.aspx.cs">
+      <DependentUpon>Faculty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Faculty.aspx.designer.cs">
+      <DependentUpon>Faculty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Main.aspx.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Main.aspx.designer.cs">
+      <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\nav.aspx.cs">
+      <DependentUpon>nav.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\nav.aspx.designer.cs">
+      <DependentUpon>nav.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Students.aspx.cs">
+      <DependentUpon>Students.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Students.aspx.designer.cs">
+      <DependentUpon>Students.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -196,20 +264,20 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
