@@ -91,6 +91,19 @@
             padding: 15px;
             text-align: center;
         }
+        .button{
+             padding: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #ffffff;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #6c757d;
+            border-top: 1px solid #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -103,10 +116,11 @@
             <a href="Faculty.aspx" target="contentFrame">Faculty</a>
             <a href="Students.aspx" target="contentFrame">Students Details</a>
             <a href="Feedback.aspx" target="contentFrame">Feedback Details</a>
-            <a href="Logout.aspx" class="logout" target="contentFrame">Log out</a>
+            <a href="Logout.aspx" class="logout" target="_top">Log out</a>
+            
         </div>
     </form>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
@@ -115,6 +129,15 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6pT0aC74P2dEi4qDOpl7uQIDAQAAB"
         crossorigin="anonymous"></script>
+    
+    
+    <script>
+        // JavaScript to handle logout link click event
+        document.querySelector('.logout').addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            window.top.location.href = 'Logout.aspx'; // Redirect the parent window to logout page
+        });
+    </script>
 </body>
 </html>
 

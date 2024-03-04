@@ -19,9 +19,16 @@ namespace Student_Feedback_and_Evaluation_Platform.Admin
                 }
                 else
                 {
-                    
+
                 }
             }
+            //Session.RemoveAll();
         }
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

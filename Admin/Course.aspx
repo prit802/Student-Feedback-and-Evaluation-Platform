@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Course</title>
+    <title> Course</title>
     <style>
         .form-group {
             max-width: 300px;
@@ -139,6 +139,40 @@
         </center>
     </form>
 
+    <script>
+        $(document).ready(function () {
+            $('#courseType').change(function () {
+                var courseType = $(this).val();
+                if (!courseType) {
+                    // Display alert box if course type is empty
+                    alert('Please select a valid course type.');
+                    return; // Exit the function
+                }
+
+                // Rest of your code for handling course types
+                if (courseType === 'ug' || courseType === 'pg' || courseType === 'phd') {
+                    $('#semesterGroup').show();
+                    $('#noOfSemester').val(courseType === 'ug' ? '6' : '4');
+                    $('#noOfSemester option[value="4"]').toggle(courseType !== 'ug');
+                    $('#noOfSemester option[value="6"]').toggle(courseType === 'ug');
+                } else {
+                    $('#semesterGroup').hide();
+                }
+            });
+
+            // Submit button click event handler
+            $('#submitButton').click(function () {
+                var courseType = $('#courseType').val();
+                if (!courseType) {
+                    alert('Please select a valid course type.');
+                    return false; // Prevent form submission
+                }
+            });
+        });
+
+       
+
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

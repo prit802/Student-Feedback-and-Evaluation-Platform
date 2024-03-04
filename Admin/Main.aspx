@@ -2,19 +2,17 @@
 
 
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head runat="server">
-    <title>Home Page</title>
+    <title>Main</title>
 </head>
 
 <frameset cols="250,*" frameborder="0">
     <!-- Sidebar frame -->
     <frame src="nav.aspx" name="sidebarFrame">
 
-    <!-- Content frame -->
-    <frame src="HomePaage.aspx" name="contentFrame">
-     
-</frameset> 
+        <!-- Content frame -->
+        <frame src="Dashboard.aspx" name="contentFrame">
+</frameset>
 </html>
 

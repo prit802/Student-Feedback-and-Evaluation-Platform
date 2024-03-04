@@ -111,6 +111,7 @@
     <Content Include="Admin\Faculty.aspx" />
     <Content Include="Admin\Feedback.aspx" />
     <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\Logout.aspx" />
     <Content Include="Admin\Main.aspx" />
     <Content Include="Admin\nav.aspx" />
     <Content Include="Admin\Students.aspx" />
@@ -206,6 +207,13 @@
     </Compile>
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>

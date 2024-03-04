@@ -15,9 +15,15 @@ namespace Student_Feedback_and_Evaluation_Platform.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if ((Session["Username"] == null))
+            {
+                Response.Redirect("Login.aspx");
+            }
+
 
             int facultyCount = GetFacultyCount();
             Label1.Text =facultyCount.ToString();
+
         }
 
         protected int GetFacultyCount()
@@ -26,7 +32,6 @@ namespace Student_Feedback_and_Evaluation_Platform.Admin
 
             try
             {
-                // Retrieve the connection string from web.config
 
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
@@ -38,7 +43,6 @@ namespace Student_Feedback_and_Evaluation_Platform.Admin
             }
             catch (Exception ex)
             {
-                // Handle exception
                 ClientScript.RegisterStartupScript(this.GetType(), "error", $"alert('Error: {ex.Message}');", true);
             }
 

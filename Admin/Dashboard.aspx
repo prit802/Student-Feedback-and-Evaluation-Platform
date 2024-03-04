@@ -22,22 +22,28 @@
         .main {
             height: calc(100vh - 70px);
             width: 90%;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            padding: 40px 30px 30px 30px;
+            
+            padding: 0;
         }
+        
 
         .box-container {
             display: flex;
+            margin-top:50px;
+            margin-left: 135px;
             justify-content: space-evenly;
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            background-color: darkgray;
+            padding: 20px;
         }
 
         .box {
-            height: 130px;
-            width: 200px;
+            height: 160px;
+            width: 250px;
             border-radius: 20px;
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -108,10 +114,12 @@
 <body>
 
     <div class="main">
-
+        <div>
+                <h1 style="text-align:center;">Faculty review</h1>
+            </div>
         <div class="box-container">
 
-
+            
 
             <div class="box box2">
                 <div class="text">

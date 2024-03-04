@@ -20,6 +20,12 @@ namespace Student_Feedback_and_Evaluation_Platform.Admin
             {
                 BindGridView();
             }
+
+            if ((Session["Username"] == null))
+            {
+                Response.Redirect("Login.aspx");
+            }
+            //Session.RemoveAll();
         }
 
         protected void submitButton_Click(object sender, EventArgs e)
