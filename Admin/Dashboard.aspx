@@ -11,39 +11,41 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
-        /* Main CSS Here */
-
         body {
-            background-color: #f0f0f0;
-            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            font-family: 'Trebuchet MS', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .main {
-            height: calc(100vh - 70px);
-            width: 90%;
-            
+            width: 100%;
+            margin: 0 auto;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        
 
         .box-container {
             display: flex;
-            margin-top:50px;
-            margin-left: 135px;
+            margin-top: 0px;
             justify-content: space-evenly;
             align-items: center;
-            flex-wrap: wrap;
             gap: 20px;
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
             border-radius: 20px;
-            background-color: darkgray;
+            background-color: #002147;
             padding: 20px;
         }
 
         .box {
-            height: 160px;
-            width: 250px;
+            width: 180px;
+            height: 120px;
             border-radius: 20px;
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -60,54 +62,72 @@
                 transform: scale(1.05);
             }
 
+        .box-container a {
+            text-decoration: none;
+        }
+
         .topic-heading {
             font-size: 28px;
-            color: #333;
+            color: #002147;
             margin-bottom: 10px;
         }
 
         .topic {
-            font-size: 16px;
-            color: #777;
+            font-size: 17px;
+            color: #002147;
         }
 
-        /* Responsive CSS Here */
 
         @media screen and (max-width: 850px) {
-            .box-container {
-                gap: 30px;
-            }
-
             .box {
-                width: 200px;
+                width: 120px;
+                height: 120px;
             }
         }
 
-        @media screen and (max-width: 490px) {
-            .box {
-                width: 150px;
-                height: 100px;
-                padding: 10px;
-            }
-
-            .topic-heading {
-                font-size: 20px;
-            }
-
-            .topic {
-                font-size: 12px;
-            }
+        .box-container1 {
+            width: 40%;
+            margin-top: 30px;
+            margin-right: 660px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            background-color: #002147;
+            padding: 20px;
         }
 
-        @media screen and (max-width: 400px) {
-            .topic-heading {
-                font-size: 18px;
-            }
-
-            .topic {
-                font-size: 10px;
-            }
+        .box1 {
+            display: flex;
+            align-items: center;
+           
+            width: 95%;
+            height: 45px;
+            border-radius: 20px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            background-color: #fff;
         }
+
+        .topic-heading1 {
+            font-size: 20px;
+            color: #002147;
+            /*margin-left: 300px;*/
+            position:fixed;
+            right: 750px;
+        }
+
+        .topic1 {
+            font-size: 22px;
+            color: #002147;
+        }
+
+       
+       .box-container1 a {
+            text-decoration: none;
+        }
+      
+
     </style>
 </head>
 
@@ -115,53 +135,118 @@
 
     <div class="main">
         <div>
-                <h1 style="text-align:center;">Faculty review</h1>
-            </div>
+            <h1 style="text-align: center; color: #002147;">All Review</h1>
+        </div>
         <div class="box-container">
+            <!-- Horizontal container -->
+            <a href="Course.aspx" target="contentFrame">
+                <div class="box box2">
+                    <div class="text">
+                        
+                        <i class="fas fa-book" style='font-size: 24px; color: #002147;'></i>&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="Label1" runat="server" Text="Label" class="topic-heading"></asp:Label>
+                        <h2 class="topic">Course Review</h2>
+                        
+                    </div>
+                </div>
+            </a>
+            <a href="Course.aspx" target="contentFrame">
+                <div class="box box3">
+                    <div class="text">
+                        <i class="fas fa-users" style='font-size: 24px; color: #002147;'></i>&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="Label2" runat="server" Text="Label" class="topic-heading"></asp:Label>
+                        <h2 class="topic">Faculty Review</h2>
+                    </div>
+                </div>
+            </a>
+            <a href="Course.aspx" target="contentFrame">
+                <div class="box box4">
+                    <div class="text">
+                        <i class="fas fa-briefcase" style='font-size: 24px; color: #002147;'></i>&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="Label3" runat="server" Text="Label" class="topic-heading"></asp:Label>
+                        <h2 class="topic">Placement Review</h2>
+                    </div>
+                </div>
+            </a>
+            <a href="Course.aspx" target="contentFrame">
+                <div class="box box4">
+                    <div class="text">
+                        <i class="fas fa-building" style='font-size: 24px; color: #002147;'></i>&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="Label4" runat="server" Text="Label" class="topic-heading"></asp:Label>
+                        <h2 class="topic">Infrastructure Review</h2>
+                    </div>
+                </div>
+            </a>
+            <a href="Course.aspx" target="contentFrame">
+                <div class="box box4">
+                    <div class="text">
+                        <i class="bx bxs-tachometer" style='font-size: 30px; color: #002147;'></i>&nbsp;&nbsp;&nbsp;
+                            <asp:Label ID="Label5" runat="server" Text="Label" class="topic-heading"></asp:Label>
+                        <h2 class="topic">Over All Review</h2>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <br />
 
+        <div class="box-container1">
             
+            <div class="box1 box2">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fas fa-graduation-cap" style='font-size: 30px; color: #002147;'></i>&nbsp;&nbsp;&nbsp;
 
-            <div class="box box2">
-                <div class="text">
-                    <asp:Label ID="Label1" runat="server" Text="Label" class="topic-heading"></asp:Label>
-                    <h2 class="topic">Faculty review</h2>
-                </div>
-            </div>
+               
+                <h3 class="topic1">Students</h3>
 
-            <div class="box box3">
-                <div class="text">
-                    <h2 class="topic-heading">320</h2>
-                    <h2 class="topic">infrastructure review</h2>
-                </div>
-            </div>
+                <asp:Label ID="Label6" runat="server" Text="Label" class="topic-heading1"></asp:Label>
 
-            <div class="box box4">
-                <div class="text">
-                    <h2 class="topic-heading">70</h2>
-                    <h2 class="topic">placement review</h2>
-                </div>
+                    
             </div>
+            <br>
+            
+                <div class="box1 box3">
+                    &nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-users" style='font-size: 30px; color: #002147;'></i>&nbsp;&nbsp;&nbsp;
 
-            <div class="box box4">
-                <div class="text">
-                    <h2 class="topic-heading">70</h2>
-                    <h2 class="topic">Faculty review</h2>
-                </div>
-            </div>
+                
+                <h3 class="topic1">Facultys</h3>
 
-            <div class="box box4">
-                <div class="text">
-                    <h2 class="topic-heading">70</h2>
-                    <h2 class="topic">over all review</h2>
+                <asp:Label ID="Label7" runat="server" Text="Label" class="topic-heading1"></asp:Label>
                 </div>
-            </div>
+            
+            <br>
+            
+            
+                <div class="box1 box4">
+                    &nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-book" style='font-size: 30px; color: #002147;'></i>&nbsp;&nbsp;&nbsp;
+
+                <!-- Title -->
+                <h3 class="topic1">Courses</h3>
+
+                <asp:Label ID="Label8" runat="server" Text="Label" class="topic-heading1"></asp:Label>
+                </div>
+           
+            <br>
+            
+            <a href="Feedback.aspx" target="contentFrame">
+                <div class="box1 box4">
+                    &nbsp;&nbsp;&nbsp;
+                    <i class="fas fa-comment" style='font-size: 30px; color: #002147;'></i>&nbsp;&nbsp;&nbsp;
+                    <h3 class="topic1">All FeedBack</h3>
+                    <asp:Label ID="Label9" runat="server" Text="Label" class="topic-heading1"></asp:Label>
+                </div>
+            </a>
         </div>
 
-
+        
     </div>
+
+
+
+
 
 
 </body>
 
 </html>
-

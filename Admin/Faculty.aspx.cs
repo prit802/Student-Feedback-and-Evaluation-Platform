@@ -28,33 +28,8 @@ namespace Student_Feedback_and_Evaluation_Platform.Admin
 
             }
 
-            int facultyCount = FacultyCount();
-            Label1.Text = "Total Faculty: " + facultyCount.ToString();
         }
-        protected int FacultyCount()
-        {
-            int count = 0;
-
-            try
-            {
-
-                using (SqlConnection conn = new SqlConnection(connString))
-                {
-                    conn.Open();
-                    string query = "SELECT COUNT(*) FROM Faculty";
-                    SqlCommand command = new SqlCommand(query, conn);
-                    count = (int)command.ExecuteScalar();
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle exception
-                ClientScript.RegisterStartupScript(this.GetType(), "error", $"alert('Error: {ex.Message}');", true);
-            }
-
-            return count;
-        }
-
+        
         private void CoursesDropdown()
         {
             string query = "SELECT CourseID, CourseName FROM Course";

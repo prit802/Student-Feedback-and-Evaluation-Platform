@@ -11,9 +11,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6pT0aC74P2dEi4qDOpl7uQIDAQAAB"
         crossorigin="anonymous" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+
+    <script>
+        window.onload = function () {
+            window.history.forward();
+            // Disable the back button by manipulating the browser history
+            window.history.pushState(null, null, window.location.href);
+            window.onpopstate = function () {
+                window.history.forward();
+            };
+        };
+    </script>
+
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Trebuchet MS','Arial', sans-serif;
             background-color: #ffffff;
             margin: 0;
             padding: 0;
@@ -21,9 +34,9 @@
 
         .sidebar {
             height: 100vh;
-            width: 250px;
+            width: 100%;
             position: fixed;
-            background-color: #6c757d;
+            background-color: #002147;
             padding-top: 20px;
             display: flex;
             flex-direction: column;
@@ -32,7 +45,7 @@
 
             .sidebar img {
                 border-radius: 50%;
-                margin: 20px auto;
+                margin: 10px auto;
                 display: block;
             }
 
@@ -42,10 +55,12 @@
                 font-size: 18px;
                 color: #ffffff;
                 display: block;
+                border-radius: 8px;
             }
 
                 .sidebar a:hover {
-                    background-color: #495057;
+                    background-color: #ffffff;
+                    color: #002147;
                 }
 
         .container {
@@ -66,9 +81,9 @@
             border-radius: 8px;
         }
 
-        img {
+        .img {
             border-radius: 60%;
-            margin-top: 10px;
+            margin-top: 50px;
             margin-left: 60px;
         }
 
@@ -87,12 +102,17 @@
         }
 
         .user-email {
-            color: #ffffff;
-            padding: 15px;
+            color: #CDAD68;
+            padding: 25px;
             text-align: center;
+            position: fixed;
+            bottom: 40px;
+            margin-left:60px;
+            font-size: 18px;
         }
-        .button{
-             padding: 10px;
+
+        .button {
+            padding: 10px;
             text-decoration: none;
             font-size: 18px;
             color: #ffffff;
@@ -104,23 +124,48 @@
             background-color: #6c757d;
             border-top: 1px solid #ffffff;
         }
+
+        .btn {
+            display: block;
+            padding: 15px;
+            align-content:center;
+            font-size: 18px;
+            color: #ffffff;
+            background-color: #002147;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+            .btn:hover {
+                background-color: #ffffff;
+                color: #002147;
+            }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="sidebar">
             <img src="https://www.srki.ac.in/theme/default/assets/images/logo.png" alt="Logo">
+
+            <a href="Dashboard.aspx" target="contentFrame"><i class="fas fa-tachometer-alt"></i>&nbsp;&nbsp;Dashboard</a>
+            <a href="Course.aspx" target="contentFrame"><i class="fas fa-book"></i>&nbsp;&nbsp;Course</a>
+            <a href="Subject.aspx" target="contentFrame"><i class="fas fa-chalkboard"></i>&nbsp;&nbsp;Subject</a>
+            <a href="Faculty.aspx" target="contentFrame"><i class="fas fa-users"></i>&nbsp;&nbsp;Faculty</a>
+            <a href="Students.aspx" target="contentFrame"><i class="fas fa-graduation-cap"></i>&nbsp;&nbsp;Students Details</a>
+            <a href="Feedback.aspx" target="contentFrame"><i class="fas fa-comment"></i>&nbsp;&nbsp;Feedback Details</a>
             <asp:Label ID="lblUserEmail" runat="server" CssClass="user-email"></asp:Label>
-            <a href="Dashboard.aspx" target="contentFrame">Dashboard</a>
-            <a href="Course.aspx" target="contentFrame">Course</a>
-            <a href="Faculty.aspx" target="contentFrame">Faculty</a>
-            <a href="Students.aspx" target="contentFrame">Students Details</a>
-            <a href="Feedback.aspx" target="contentFrame">Feedback Details</a>
-            <a href="Logout.aspx" class="logout" target="_top">Log out</a>
-            
+            <asp:Button ID="btnLogout" runat="server" CssClass="btn btn-primary fas fa-sign-out-alt" OnClientClick="return logout();" Text="Log out" />
+
+
+
         </div>
     </form>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"
@@ -129,15 +174,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6pT0aC74P2dEi4qDOpl7uQIDAQAAB"
         crossorigin="anonymous"></script>
-    
-    
+
+
     <script>
-        // JavaScript to handle logout link click event
-        document.querySelector('.logout').addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default link behavior
-            window.top.location.href = 'Logout.aspx'; // Redirect the parent window to logout page
-        });
+        function logout() {
+            window.top.location.href = 'Logout.aspx';
+
+            return false; 
+        }
     </script>
+
+
 </body>
 </html>
 

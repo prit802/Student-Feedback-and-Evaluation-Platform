@@ -109,9 +109,7 @@
         </div>
         <br>
         <br>
-               <div>
-                   <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                   </div>
+               
         <div>
             <center>
                 <h1> FACULTY'S</h1>
@@ -138,10 +136,10 @@
                         <asp:BoundField DataField="Description" HeaderText="Description" ItemStyle-CssClass="text-center">
                             <ItemStyle CssClass="text-center"></ItemStyle>
                         </asp:BoundField>
-                        <asp:CommandField ButtonType="Button" ShowEditButton="True" ControlStyle-CssClass="btn btn-primary">
+                        <asp:CommandField ButtonType="Button" ShowEditButton="True" ControlStyle-CssClass="btn btn-primary" HeaderText="Action">
                             <ControlStyle CssClass="btn btn-primary"></ControlStyle>
                         </asp:CommandField>
-                        <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger">
+                        <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ControlStyle-CssClass="btn btn-danger" HeaderText="Action">
                             <ControlStyle CssClass="btn btn-danger"></ControlStyle>
                         </asp:CommandField>
                     </Columns>

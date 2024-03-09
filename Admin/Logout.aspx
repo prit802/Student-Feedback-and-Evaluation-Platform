@@ -6,9 +6,22 @@
 <head runat="server">
     <title></title>
 </head>
+    <script>
+    window.onload = function () {
+        window.history.forward();
+        // Disable the back button by manipulating the browser history
+        window.history.pushState(null, null, window.location.href);
+        window.onpopstate = function () {
+            window.history.forward();
+        };
+    };
+    </script>
+
 <body>
     <form id="form1" runat="server">
         <div>
+
+          
         </div>
     </form>
 </body>

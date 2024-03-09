@@ -11,20 +11,16 @@ namespace Student_Feedback_and_Evaluation_Platform.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Clear();
-            // Abandon the session
+
             Session.Abandon();
-            // Redirect to the login page
+            Session.RemoveAll();
+            Session.Clear();
+            
             Response.Redirect("Login.aspx");
 
-            if (Session["Username"] != null)
-            {
-                Response.Redirect("Login.aspx");
-            }
-
-            //Session.Abandon();
-
-            //Response.Redirect("Login.aspx");
         }
+        
+
+
     }
 }

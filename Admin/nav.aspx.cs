@@ -13,21 +13,26 @@ namespace Student_Feedback_and_Evaluation_Platform.Admin
         {
             if (!IsPostBack)
             {
-                if (Session["Username"] != null)
+                if (Session["Username"] == null)
                 {
-                    lblUserEmail.Text = Session["Username"].ToString();
+                    Response.Redirect("Login.aspx");
                 }
-                else
-                {
-
-                }
+                lblUserEmail.Text = Session["Username"].ToString();
             }
-            //Session.RemoveAll();
-        }
-        protected void btnLogout_Click(object sender, EventArgs e)
-        {
+
+
+            if (Request.QueryString["logout"] == "true")
+            {
+                Session.Abandon();
+                Session.RemoveAll();
+                Session.Clear();
+                Response.Redirect("Logout.aspx");
+            }
 
         }
+
+
+        
 
 
     }
